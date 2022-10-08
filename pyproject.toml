@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "hardblock"
+version = "0.0.1"
+description = "Just a prank"
+authors = ["jlucasoliveira <lucasosilva68@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.0.5"
+channels = "^3.0.4"
+django-ninja = "^0.18.0"
+serpy = "^0.3.1"
+pydantic = "^1.9.1"
+uvicorn = "^0.18.2"
+whitenoise = "^6.2.0"
+django-unfold = "^0.1.10"
+psycopg2-binary = "^2.9.3"
+python-dotenv = "^0.21.0"
+
+[tool.poetry.dev-dependencies]
+debugpy = "^1.6.3"
+
+[tool.black]
+line-length = 119
+include = '\.pyi?$'
+exclude = '''
+(
+    \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | teclat
+    |  base_backend/asgi\.py
+    |  base_backend/wsgi\.py
+    | ./migrations
+    | manage\.py
+    | _build
+    | buck-out
+    | build
+    | dist
+)
+'''
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
